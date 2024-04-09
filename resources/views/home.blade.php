@@ -98,26 +98,6 @@
 
 </div>
 
-    <!-- Products Section Wrapper to Control Width -->
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"> <!-- Adjust the max width as needed -->
-    <div class="bg-gray-200 py-8">
-        <h2 class="text-center text-2xl font-bold mb-6">Our Products</h2>
-        <!-- Scrollable Container for Products -->
-        <div class="flex overflow-x-auto scroll-smooth py-4 gap-4" style="scrollbar-width: none;" id="scrollable-products">
-            <!-- Products -->
-            @for ($i = 1; $i <= 10; $i++)
-            <div class="flex-none shrink-0 w-60 bg-white rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 ease-in-out" style="min-width: 240px;">
-                <img src="path_to_image/product{{$i}}.jpg" alt="Product {{$i}}" class="w-full h-40 object-cover rounded-t-lg">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold">Product {{$i}}</h3>
-                    <p class="text-sm text-gray-600">Description of product {{$i}}...</p>
-                </div>
-            </div>
-            @endfor
-        </div>
-    </div>
-</div>
-
 </div>
 
     </div>
