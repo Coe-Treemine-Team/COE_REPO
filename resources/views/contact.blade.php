@@ -15,6 +15,27 @@
 <body class="bg-gray-100">
     @include('components.navbar')
 
+
+    <div class="custom-expanded u-grey-light-2 u-map u-map-1">
+              <div class="embed-responsive">
+                <!-- <iframe
+                  class="embed-responsive-item"
+                  src=""
+                  
+                  data-map="JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWVtYmVkJTIyJTJDJTIyYWRkcmVzcyUyMiUzQSUyMk1hbmhhdHRhbiUyQyUyME5ldyUyMFlvcmslMjIlMkMlMjJ6b29tJTIyJTNBMTAlMkMlMjJ0eXBlSWQlMjIlM0ElMjJyb2FkJTIyJTJDJTIybGFuZyUyMiUzQSUyMiUyMiUyQyUyMmVtYmVkJTIyJTNBJTIyaHR0cHMlM0ElMkYlMkZ3d3cuYmluZy5jb20lMkZtYXBzJTNGJTI2Y3AlM0QxLjExODkzNX4xMDQuMDQ3MzMxJTI2bHZsJTNEMTclMjZvc2lkJTNEMzYxNDhhOWItMGZjNy00YjkyLWE4ZjctYzQxYTk2NDRkY2MxJTI2aW1naWQlM0QwOTBiNzZlMS05ODQ1LTRkODQtOWMzOS03ZjgwYWEyODYzYmUlMjZ2JTNEMiUyNnNWJTNEMiUyNmZvcm0lM0RTMDAwMjclMjIlN0Q="
+                ></iframe> -->
+                <iframe
+                  class="embed-responsive-item"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0586076080717!2d104.04743192678673!3d1.1181309396358665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98921856ddfab%3A0xf9d9fc65ca00c9d!2sPoliteknik%20Negeri%20Batam!5e0!3m2!1sid!2sid!4v1699499594284!5m2!1sid!2sid"
+                  width="400"
+                  height="400"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <h1 class="text-3xl font-bold text-center mb-4">Contact Us</h1>
 
