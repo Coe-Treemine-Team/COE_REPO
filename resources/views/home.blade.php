@@ -100,7 +100,43 @@
 
     <!-- Selling Points -->
     <div class="selling-points">
-        <p>Selling Points Placeholder</p>
+        
+    <div class="2xl:container 2xl:mx-auto">
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-24 md:gap-10 gap-12 lg:px-20 md:py-12 md:px-6 py-9 px-4">
+                <!-- Free Shipping Grid Card -->
+                <div class="flex space-x-4">
+                    <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg1.svg" alt="Free Shipping">
+                    <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg1dark.svg" alt="Free Shipping">
+                    <div>
+                        <p class="text-xl dark:text-white leading-5 font-semibold text-gray-800">Free Shipping</p>
+                        <p class="text-base leading-6 dark:text-gray-400 font-normal text-gray-600 mt-3">Free shipping on orders above $100</p>
+                    </div>
+                </div>
+    
+                <!-- Support Grid Card -->
+    
+                <div class="flex space-x-4">
+                    <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg2.svg" alt="Support 24/7">
+                    <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg2dark.svg" alt="Support 24/7">
+                    <div>
+                        <p class="text-xl dark:text-white leading-5 font-semibold text-gray-800">Support 24/7</p>
+                        <p class="text-base leading-6 dark:text-gray-400 font-normal text-gray-600 mt-3">Contact us 24 hours a day at care@supprt.com</p>
+                    </div>
+                </div>
+    
+                <!-- MonyBack Guarantee card -->
+    
+                <div class="flex space-x-4">
+                    <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg3.svg" alt="Money Back Guarantee">
+                    <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg3dark.svg" alt="Money Back Guarantee">
+                    <div>
+                        <p class="text-xl dark:text-white leading-5 font-semibold text-gray-800">Money Back Guarantee</p>
+                        <p class="text-base leading-6 dark:text-gray-400 font-normal text-gray-600 mt-3">You can return the product within 30 days.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
     </div>
 <!-- Services Offered -->
 <div class="services-offered">
@@ -180,116 +216,79 @@
     <div class="product-scroll-container">
         <!-- Product Card 1 -->
         <div class="product-card">
-            <img src="https://cdn.pixabay.com/photo/2013/07/13/14/07/apparel-162180_960_720.png" alt="Product Image 1" class="product-image">
+            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 1" class="product-image">
             <div class="product-info">
-                <h1 class="text-xl font-semibold">Product Name 1</h1>
+                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
                 <div class="price-stock">
                     <span class="text-xl font-semibold">$110.00</span>
                     <span class="text-sm">In stock</span>
-                </div>
-                <div class="sizes">
-                    <input type="radio" name="size1" value="xs">XS
-                    <input type="radio" name="size1" value="s">S
-                    <input type="radio" name="size1" value="m">M
-                    <input type="radio" name="size1" value="l">L
-                    <input type="radio" name="size1" value="xl">XL
                 </div>
                 <button type="button" class="buy-now">Buy now</button>
             </div>
         </div>
         <!-- Product Card 2 -->
         <div class="product-card">
-            <img src="https://cdn.pixabay.com/photo/2013/07/13/14/07/apparel-162180_960_720.png" alt="Product Image 2" class="product-image">
+            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
             <div class="product-info">
-                <h1 class="text-xl font-semibold">Product Name 2</h1>
+                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
                 <div class="price-stock">
-                    <span class="text-xl font-semibold">$120.00</span>
+                    <span class="text-xl font-semibold">IDR 999.99</span>
                     <span class="text-sm">In stock</span>
                 </div>
-                <div class="sizes">
-                    <input type="radio" name="size2" value="xs">XS
-                    <input type="radio" name="size2" value="s">S
-                    <input type="radio" name="size2" value="m">M
-                    <input type="radio" name="size2" value="l">L
-                    <input type="radio" name="size2" value="xl">XL
-                </div>
+
                 <button type="button" class="buy-now">Buy now</button>
             </div>
         </div>
         <!-- Additional Product Cards similarly -->
         <!-- Product Card 3 -->
         <div class="product-card">
-            <img src="https://cdn.pixabay.com/photo/2013/07/13/14/07/apparel-162180_960_720.png" alt="Product Image 2" class="product-image">
+            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
             <div class="product-info">
-                <h1 class="text-xl font-semibold">Product Name 2</h1>
+                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
                 <div class="price-stock">
-                    <span class="text-xl font-semibold">$120.00</span>
+                    <span class="text-xl font-semibold">IDR 999.99</span>
                     <span class="text-sm">In stock</span>
                 </div>
-                <div class="sizes">
-                    <input type="radio" name="size2" value="xs">XS
-                    <input type="radio" name="size2" value="s">S
-                    <input type="radio" name="size2" value="m">M
-                    <input type="radio" name="size2" value="l">L
-                    <input type="radio" name="size2" value="xl">XL
-                </div>
+
                 <button type="button" class="buy-now">Buy now</button>
             </div>
         </div>
         <!-- Product Card 4 -->
         <div class="product-card">
-            <img src="https://cdn.pixabay.com/photo/2013/07/13/14/07/apparel-162180_960_720.png" alt="Product Image 2" class="product-image">
+            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
             <div class="product-info">
-                <h1 class="text-xl font-semibold">Product Name 2</h1>
+                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
                 <div class="price-stock">
-                    <span class="text-xl font-semibold">$120.00</span>
+                    <span class="text-xl font-semibold">IDR 999.99</span>
                     <span class="text-sm">In stock</span>
                 </div>
-                <div class="sizes">
-                    <input type="radio" name="size2" value="xs">XS
-                    <input type="radio" name="size2" value="s">S
-                    <input type="radio" name="size2" value="m">M
-                    <input type="radio" name="size2" value="l">L
-                    <input type="radio" name="size2" value="xl">XL
-                </div>
+
                 <button type="button" class="buy-now">Buy now</button>
             </div>
         </div>
         <!-- Product Card 5 -->
         <div class="product-card">
-            <img src="https://cdn.pixabay.com/photo/2013/07/13/14/07/apparel-162180_960_720.png" alt="Product Image 2" class="product-image">
+            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
             <div class="product-info">
-                <h1 class="text-xl font-semibold">Product Name 2</h1>
+                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
                 <div class="price-stock">
-                    <span class="text-xl font-semibold">$120.00</span>
+                    <span class="text-xl font-semibold">IDR 999.99</span>
                     <span class="text-sm">In stock</span>
                 </div>
-                <div class="sizes">
-                    <input type="radio" name="size2" value="xs">XS
-                    <input type="radio" name="size2" value="s">S
-                    <input type="radio" name="size2" value="m">M
-                    <input type="radio" name="size2" value="l">L
-                    <input type="radio" name="size2" value="xl">XL
-                </div>
+
                 <button type="button" class="buy-now">Buy now</button>
             </div>
         </div>
         <!-- Product Card 7 -->
         <div class="product-card">
-            <img src="https://cdn.pixabay.com/photo/2013/07/13/14/07/apparel-162180_960_720.png" alt="Product Image 2" class="product-image">
+            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
             <div class="product-info">
-                <h1 class="text-xl font-semibold">Product Name 2</h1>
+                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
                 <div class="price-stock">
-                    <span class="text-xl font-semibold">$120.00</span>
+                    <span class="text-xl font-semibold">IDR 999.99</span>
                     <span class="text-sm">In stock</span>
                 </div>
-                <div class="sizes">
-                    <input type="radio" name="size2" value="xs">XS
-                    <input type="radio" name="size2" value="s">S
-                    <input type="radio" name="size2" value="m">M
-                    <input type="radio" name="size2" value="l">L
-                    <input type="radio" name="size2" value="xl">XL
-                </div>
+
                 <button type="button" class="buy-now">Buy now</button>
             </div>
         </div>

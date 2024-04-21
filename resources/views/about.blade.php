@@ -35,14 +35,14 @@
         </div>
     </div>
     <div class="py-12 xl:w-1/2 lg:w-1/3 sm:w-1/2">
-        <img src="https://i.ibb.co/7SmJNvH/about-image.png" alt="image of a woman studying" class="h-full rounded-md object-cover object-center md:block hidden" style="width: 500px; height: 500px;" />
+        <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="image of a woman studying" class="h-full rounded-md object-cover object-center md:block hidden" style="width: 500px; height: 500px;" />
         <img src="https://i.ibb.co/NT0VJcd/pexels-la-miko-3681591-1.png" alt="image of a woman studying" class="h-auto w-auto md:hidden block" style="width: 500px; height: 500px;" />
     </div>
 </div>
 
 <div class="flex flex-col md:flex-row md:items-stretch items-center justify-center">
     <div class="py-12 xl:w-1/2 lg:w-1/3 sm:w-1/2 order-1 md:order-1" style="margin-left: 116px;">
-        <img src="https://i.ibb.co/7SmJNvH/about-image.png" alt="image of a woman studying" class="rounded-md object-cover object-center block" style="width: 500px; height: 500px;" />
+        <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="image of a woman studying" class="rounded-md object-cover object-center block" style="width: 500px; height: 500px;" />
         <img src="https://i.ibb.co/NT0VJcd/pexels-la-miko-3681591-1.png" alt="image of a woman studying" class="w-auto md:hidden block" style="width: 500px; height: 500px;" />
     </div>
     <div class="md:py-20 xl:w-1/2 sm:w-1/2 lg:ml-20 md:ml-6 flex flex-col md:items-start items-center justify-center xl:ml-28 order-2 md:order-2">
@@ -83,7 +83,7 @@
         </div>
     </div>
     <div class="py-12 xl:w-1/2 lg:w-1/3 sm:w-1/2">
-        <img src="https://i.ibb.co/7SmJNvH/about-image.png" alt="image of a woman studying" class="h-full rounded-md object-cover object-center md:block hidden" style="width: 500px; height: 500px;" />
+        <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="image of a woman studying" class="h-full rounded-md object-cover object-center md:block hidden" style="width: 500px; height: 500px;" />
         <img src="https://i.ibb.co/NT0VJcd/pexels-la-miko-3681591-1.png" alt="image of a woman studying" class="h-auto w-auto md:hidden block" style="width: 500px; height: 500px;" />
     </div>
 </div>

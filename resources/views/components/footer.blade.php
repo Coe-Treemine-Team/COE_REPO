@@ -4,9 +4,8 @@
 <div class="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4">
                 <div class="flex flex-col flex-shrink-0">
-                    <div class="dark:text-white">
-                        <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer-I-svg1.svg" alt="icon">
-                        <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer-I-svg1dark.svg" alt="icon">
+                    <div class="dark:text-white flex justify-center items-center" style="height: 100%;">
+                    <a class="font-bold text-xl text-gray-600" href="{{ url('/') }}">LOGO</a>
                     </div>
                     <p class="text-sm leading-none text-black mt-4">Copyright © 2021 Luxe</p>
                     <p class="text-sm leading-none text-black mt-4">All rights reserved</p>
@@ -22,6 +21,16 @@
         </svg>
     </button>
     <button aria-label="twitter" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
+        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- SVG content here -->
+        </svg>
+    </button>
+    <button aria-label="youtube" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
+        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- SVG content here -->
+        </svg>
+    </button>
+    <button aria-label="youtube" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- SVG content here -->
         </svg>
