@@ -7,99 +7,38 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         /* Existing styles from the homepage */
     </style>
 </head>
-<body class="bg-gray-100">
-    @include('components.navbar')
+<body>
+    @include('components.navbar') <!-- Including the navbar component -->
 
-
-    <div class="custom-expanded u-grey-light-2 u-map u-map-1">
-              <div class="embed-responsive">
-                <!-- <iframe
-                  class="embed-responsive-item"
-                  src=""
-                  
-                  data-map="JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWVtYmVkJTIyJTJDJTIyYWRkcmVzcyUyMiUzQSUyMk1hbmhhdHRhbiUyQyUyME5ldyUyMFlvcmslMjIlMkMlMjJ6b29tJTIyJTNBMTAlMkMlMjJ0eXBlSWQlMjIlM0ElMjJyb2FkJTIyJTJDJTIybGFuZyUyMiUzQSUyMiUyMiUyQyUyMmVtYmVkJTIyJTNBJTIyaHR0cHMlM0ElMkYlMkZ3d3cuYmluZy5jb20lMkZtYXBzJTNGJTI2Y3AlM0QxLjExODkzNX4xMDQuMDQ3MzMxJTI2bHZsJTNEMTclMjZvc2lkJTNEMzYxNDhhOWItMGZjNy00YjkyLWE4ZjctYzQxYTk2NDRkY2MxJTI2aW1naWQlM0QwOTBiNzZlMS05ODQ1LTRkODQtOWMzOS03ZjgwYWEyODYzYmUlMjZ2JTNEMiUyNnNWJTNEMiUyNmZvcm0lM0RTMDAwMjclMjIlN0Q="
-                ></iframe> -->
-                <iframe
-                  class="embed-responsive-item"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0586076080717!2d104.04743192678673!3d1.1181309396358665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98921856ddfab%3A0xf9d9fc65ca00c9d!2sPoliteknik%20Negeri%20Batam!5e0!3m2!1sid!2sid!4v1699499594284!5m2!1sid!2sid"
-                  width="400"
-                  height="400"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-        <h1 class="text-3xl font-bold text-center mb-4">Contact Us</h1>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <h2 class="text-xl font-semibold mb-2">Get in Touch</h2>
-                <!-- Contact Form -->
-                <form action="#" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required class="input">
-                    <input type="email" name="email" placeholder="Your Email" required class="input">
-                    <textarea name="message" placeholder="Your Message" required class="textarea"></textarea>
-                    <!-- Captcha or Anti-Spam Features -->
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-                <!-- End of Contact Form -->
-                
-                <!-- Social Media Links -->
-                <div class="social-links">
-                    <!-- Icons or text links to social media -->
-                </div>
-            </div>
-
-            <div>
-                <h2 class="text-xl font-semibold mb-2">Information</h2>
-                <!-- Email, Phone, Address -->
-                <p><strong>Email:</strong> contact@coetree.com</p>
-                <p><strong>Phone:</strong> +1234567890</p>
-                <p><strong>Address:</strong> 123 Tree Street, Forest City, Earth</p>
-
-                <!-- Map and Directions -->
-                <!-- Embed Google Map or similar -->
-
-                <!-- Business Hours -->
-                <p><strong>Business Hours:</strong> Mon-Fri 9:00 AM - 5:00 PM</p>
-
-                <!-- Team Contact Information -->
-                <p><strong>Customer Service:</strong> service@coetree.com</p>
-
-                <!-- FAQ Link -->
-                <a href="/faq">FAQs</a>
-            </div>
+    <section class="text-gray-600 body-font relative">
+      <div class="absolute inset-0 bg-gray-300">
+        <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127653.29166146736!2d103.91207326381738!3d1.0365945612023388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98921856ddfab%3A0xf9d9fc65ca00c9d!2sPoliteknik%20Negeri%20Batam!5e0!3m2!1sid!2sid!4v1713693810017!5m2!1sid!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="container px-5 py-24 mx-auto flex">
+        <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+          <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
+          <p class="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
+          <div class="relative mb-4">
+            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+            <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+          <div class="relative mb-4">
+            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+            <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+          </div>
+          <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+          <p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
         </div>
+      </div>
+    </section>
 
-        <!-- Feedback Section -->
-        <div class="feedback">
-            <!-- Form or link to form -->
-        </div>
+    @include('components.footer') <!-- Including the footer component -->
 
-        <!-- Newsletter Signup Form -->
-        <div class="newsletter-signup">
-            <!-- Form for signing up to a newsletter -->
-        </div>
-
-        <!-- Privacy Policy Link -->
-        <a href="/privacy-policy">Privacy Policy</a>
-
-        <!-- Accessibility Features -->
-        <!-- Implement accessibility features across the page -->
-
-        @include('components.footer')
-    </div>
-
-    <script>
-        // JavaScript for additional functionalities if necessary
-    </script>
 </body>
 </html>
