@@ -61,7 +61,7 @@
                     <a href="javascript:void(0)" class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-black cursor-pointer">Terms of service</a>
                 </div>
                 <div class="mt-10 lg:block hidden">
-                    <label class="text-xl font-medium leading-5 text-gray-800 dark:text-white">Get updates</label>
+                    <label class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-black cursor-pointer">Get updates</label>
                     <div class="cursor-pointer flex items-center justify-between border border-gray-800 dark:border-white mt-4">
                         <input type="text" class="text-base leading-4 p-4 w-full focus:outline-none text-gray-800 dark:text-white dark:placeholder-white dark:bg-gray-900 dark:border-white placeholder-gray-800" placeholder="Enter your email" />
                         <button aria-label="send" class="mr-4 fill-current text-gray-800 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">

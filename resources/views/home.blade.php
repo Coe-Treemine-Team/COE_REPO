@@ -11,19 +11,34 @@
     <script src="https://cdn.tailwindcss.com"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
-        /* Additional styles */
-        .banner-placeholder, .selling-points, .services-offered, .products {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-            text-align: center;
-        }
-        .banner-placeholder {
-            height: 963px;
-            background-color: #D9D9D9;
-        }
+    .banner-placeholder, .selling-points, .services-offered, .products {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+        text-align: center;
+    }
+    .banner-placeholder {
+        height: 963px;
+        background-color: #D9D9D9;
+        display: flex;  /* Center the image vertically and horizontally */
+        align-items: center;
+        justify-content: center;
+    }
+    .banner-placeholder img {
+        width: 100%;   /* Full width of the container */
+        height: 100%;  /* Full height of the container */
+        object-fit: cover;  /* Cover the container without distorting */
+    }
+    .selling-points {
+        height: 150px;
+        background-color: #EFEFEF;
+    }
+    .services-offered {
+        height: 1700px;
+        background-color: #F5F5F5;
+    }
         .selling-points {
             height: 150px;
             background-color: #EFEFEF;
@@ -32,62 +47,47 @@
             height: 1700px;
             background-color: #F5F5F5;
         }
-/* General container styling */
-.products {
-    max-width: 100%;
-    overflow: hidden;
-}
-
-/* Horizontal scrolling container */
-.product-scroll-container {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 20px 0;
-    gap: 20px;
-}
-
-/* Individual product card styling */
-.product-card {
-    flex: 0 0 auto;
-    width: 300px;
-    background: #FFF; /* Optional: for better visibility */
-    border: 1px solid #ddd; /* Optional: adds border for better visibility */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
-}
-
-/* Product image styling */
-.product-image {
-    width: 100%;
-    height: auto;
-}
-
-/* Product info section within card */
-.product-info {
-    padding: 16px;
-}
-
-/* Styling for the 'Buy now' button */
-.buy-now {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .product-card {
-        width: 250px;
-    }
-}
-
-
+        .products {
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .product-scroll-container {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px 0;
+            gap: 20px;
+        }
+        .product-card {
+            flex: 0 0 auto;
+            width: 300px;
+            background: #FFF;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+        }
+        .product-info {
+            padding: 16px;
+        }
+        .buy-now {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .product-card {
+                width: 250px;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -95,8 +95,11 @@
 
     <!-- Banner Placeholder -->
     <div class="banner-placeholder">
-        <p>Banner Placeholder</p>
+        <!-- Replace the paragraph tag with an image tag below -->
+        <img src="https://via.placeholder.com/960x600" alt="Banner Image">
     </div>
+    <!-- Further content goes here -->
+
 
     <!-- Selling Points -->
     <div class="selling-points">
