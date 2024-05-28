@@ -7,7 +7,7 @@
                     <div class="dark:text-white flex justify-center items-center" style="height: 100%;">
                     <a class="font-bold text-xl text-gray-600" href="{{ url('/') }}">LOGO</a>
                     </div>
-                    <p class="text-sm leading-none text-black mt-4">Copyright © 2021 Luxe</p>
+                    <p class="text-sm leading-none text-black mt-4">Copyright © 2024 COE TREE MINE</p>
                     <p class="text-sm leading-none text-black mt-4">All rights reserved</p>
                     <div class="flex items-center gap-x-4 mt-12">
     <button aria-label="instagram" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">

@@ -26,9 +26,27 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        $request->session()->regenerate();
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        (Auth::attempt($credentials));
+ 
+        if (Auth()->attempt($credentials)) {
+            $request->session()->regenerate();
+            if (Auth()->user()->role === "admin") {
+                // jika user admin
+                return redirect()->intended('/home_admin')->with('success', ' Berhasil Login!');
+            } else {
+                // jika customer
+                return redirect()->intended('')->with('success', ' Berhasil Login!');
+            }
+            
+        }
+ 
+
+        return redirect('/login')->with('unsuccess', 'Email / Password Salah!');
     }
 
     /**
