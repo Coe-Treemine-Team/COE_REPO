@@ -10,6 +10,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <title>COE TREEMINE</title>
+    <link rel="icon" type="image/png" href="favicon.png" >
     <style>
     .banner-placeholder, .selling-points, .services-offered, .products {
         display: flex;
