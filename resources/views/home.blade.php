@@ -4,90 +4,93 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>COE TREEMINE</title>
-    <link rel="icon" type="image/png" href="favicon.png" >
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
-    .banner-placeholder, .selling-points, .services-offered, .products {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #333;
-        text-align: center;
-    }
-    .banner-placeholder {
-        height: 963px;
-        background-color: #D9D9D9;
-        display: flex;  /* Center the image vertically and horizontally */
-        align-items: center;
-        justify-content: center;
-    }
-    .banner-placeholder img {
-        width: 100%;   /* Full width of the container */
-        height: 100%;  /* Full height of the container */
-        object-fit: cover;  /* Cover the container without distorting */
-    }
-    .selling-points {
-        height: 150px;
-        background-color: #EFEFEF;
-    }
-    .services-offered {
-        height: 1700px;
-        background-color: #F5F5F5;
-    }
+        .banner-placeholder, .selling-points, .services-offered, .products {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            text-align: center;
+        }
+        .banner-placeholder {
+            height: 963px;
+            background-color: #D9D9D9;
+        }
+        .banner-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .selling-points {
             height: 150px;
             background-color: #EFEFEF;
+            margin: 32px 0;
         }
         .services-offered {
-            height: 1700px;
             background-color: #F5F5F5;
-        }
-        .products {
-            max-width: 100%;
-            overflow: hidden;
+            padding: 32px;
+            margin: 32px 0;
         }
         .product-scroll-container {
             display: flex;
-            flex-direction: row;
             overflow-x: auto;
-            white-space: nowrap;
-            padding: 20px 0;
-            gap: 20px;
+            gap: 24px;
+            padding: 16px;
+            scroll-snap-type: x mandatory;
         }
         .product-card {
-            flex: 0 0 auto;
-            width: 300px;
-            background: #FFF;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .product-image {
-            width: 100%;
-            height: auto;
-        }
-        .product-info {
+            border-radius: 8px;
             padding: 16px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+            flex: 0 0 auto;
+            width: 200px;
+            margin: 8px;
         }
-        .buy-now {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .product-card img {
+            border-radius: 8px;
+            max-width: 100%;
         }
-        @media (max-width: 768px) {
-            .product-card {
-                width: 250px;
-            }
+        .product-scroll-container::-webkit-scrollbar {
+            height: 12px;
+        }
+        .product-scroll-container::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 6px;
+        }
+        .product-scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .grid-container {
+            display: grid;
+            gap: 24px;
+        }
+        .grid-item {
+            background-color: white;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .tablinks {
+            margin: 8px;
+        }
+        .tabcontent {
+            padding: 16px;
+            margin: 8px 0;
+        }
+        form .space-y-4 > div {
+            margin-bottom: 16px;
+        }
+        form .space-y-4 > div:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -96,16 +99,12 @@
 
     <!-- Banner Placeholder -->
     <div class="banner-placeholder">
-        <!-- Replace the paragraph tag with an image tag below -->
         <img src="https://via.placeholder.com/960x600" alt="Banner Image">
     </div>
-    <!-- Further content goes here -->
-
 
     <!-- Selling Points -->
     <div class="selling-points">
-        
-    <div class="2xl:container 2xl:mx-auto">
+        <div class="2xl:container 2xl:mx-auto">
             <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-24 md:gap-10 gap-12 lg:px-20 md:py-12 md:px-6 py-9 px-4">
                 <!-- Free Shipping Grid Card -->
                 <div class="flex space-x-4">
@@ -116,9 +115,8 @@
                         <p class="text-base leading-6 dark:text-gray-400 font-normal text-gray-600 mt-3">Free shipping on orders above $100</p>
                     </div>
                 </div>
-    
+
                 <!-- Support Grid Card -->
-    
                 <div class="flex space-x-4">
                     <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg2.svg" alt="Support 24/7">
                     <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg2dark.svg" alt="Support 24/7">
@@ -127,9 +125,8 @@
                         <p class="text-base leading-6 dark:text-gray-400 font-normal text-gray-600 mt-3">Contact us 24 hours a day at care@supprt.com</p>
                     </div>
                 </div>
-    
-                <!-- MonyBack Guarantee card -->
-    
+
+                <!-- Money Back Guarantee Card -->
                 <div class="flex space-x-4">
                     <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg3.svg" alt="Money Back Guarantee">
                     <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-4-svg3dark.svg" alt="Money Back Guarantee">
@@ -140,165 +137,128 @@
                 </div>
             </div>
         </div>
-    
     </div>
-<!-- Services Offered -->
-<div class="services-offered">
+
+    <!-- Services Offered -->
+    <div class="services-offered">
         <!-- PCB Order Customization Section -->
-<div class="service-card bg-white shadow-md rounded-lg p-6 mx-auto my-8">
-    <h3 class="text-xl font-semibold text-center mb-4">PCB Order Customization</h3>
-    <div class="tabs mb-4 flex justify-center">
-        <button class="tablinks active px-4 py-2 bg-blue-500 text-black rounded-lg mr-2" onclick="openTab(event, 'Prototype')">Prototype</button>
-        <button class="tablinks px-4 py-2 bg-blue-500 text-black rounded-lg" onclick="openTab(event, 'PCBAssembly')">PCB Assembly</button>
-    </div>
-
-    <!-- Prototype Form -->
-    <div id="Prototype" class="tabcontent" style="display: block;">
-        <form class="space-y-4">
-            <div>
-                <label for="dimensions" class="block text-sm font-medium text-gray-700">Dimensions (length x width):</label>
-                <input type="text" id="dimensions" name="dimensions" placeholder="100mm x 100mm" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <div class="service-card bg-white shadow-md rounded-lg p-6 mx-auto my-8">
+            <h3 class="text-xl font-semibold text-center mb-4">PCB Order Customization</h3>
+            <div class="tabs mb-4 flex justify-center">
+                <button class="tablinks active px-4 py-2 bg-blue-500 text-black rounded-lg mr-2" onclick="openTab(event, 'Prototype')">Prototype</button>
+                <button class="tablinks px-4 py-2 bg-blue-500 text-black rounded-lg" onclick="openTab(event, 'PCBAssembly')">PCB Assembly</button>
             </div>
 
-            <div>
-                <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity:</label>
-                <select id="quantity" name="quantity" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                    @for ($i = 5; $i <= 100; $i += 5)
-                        <option value="{{ $i }}">{{ $i }}</option>
-                    @endfor
-                </select>
+            <!-- Prototype Form -->
+            <div id="Prototype" class="tabcontent" style="display: block;">
+                <form class="space-y-4">
+                    <div>
+                        <label for="dimensions" class="block text-sm font-medium text-gray-700">PCB Dimensions:</label>
+                        <select id="dimensions" name="dimensions" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="base_material" class="block text-sm font-medium text-gray-700">PCB Base Material:</label>
+                        <select id="base_material" name="base_material" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="FR-4">FR-4 (Standard)</option>
+                            <option value="Aluminum">Aluminum</option>
+                        </select>
+                    </div>
+
+                    <!-- New PCB Components Selection Card for Prototype -->
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <h4 class="text-lg font-semibold text-gray-800">PCB Components Selection (Prototype)</h4>
+                            <div class="space-y-4">
+                                @foreach (['Resistors', 'Capacitors', 'Diodes'] as $component)
+                                    <div class="flex items-center">
+                                        <label class="block text-sm font-medium text-gray-700 mr-2">{{ $component }} (Through-hole / SMD):</label>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="{{ strtolower($component) }}-include" name="{{ strtolower($component) }}_include" value="include" class="mr-1">
+                                            <label for="{{ strtolower($component) }}-include" class="text-sm font-medium text-gray-700 mr-2">Include</label>
+                                            <input type="radio" id="{{ strtolower($component) }}-exclude" name="{{ strtolower($component) }}_include" value="exclude" class="mr-1">
+                                            <label for="{{ strtolower($component) }}-exclude" class="text-sm font-medium text-gray-700 mr-2">Exclude</label>
+                                        </div>
+                                        <input type="number" id="{{ strtolower($component) }}-quantity" name="{{ strtolower($component) }}_quantity" placeholder="Quantity" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-24 shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md">Submit Order</button>
+                </form>
             </div>
 
-            <div>
-                <label for="layers" class="block text-sm font-medium text-gray-700">Layers:</label>
-                <select id="layers" name="layers" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                    @for ($i = 2; $i <= 14; $i += 2)
-                        <option value="{{ $i }}">{{ $i }}</option>
-                    @endfor
-                </select>
-            </div>
+            <!-- PCB Assembly Form -->
+            <div id="PCBAssembly" class="tabcontent" style="display: none;">
+                <form class="space-y-4">
+                    <div>
+                        <label for="pcb_assembly_type" class="block text-sm font-medium text-gray-700">PCB Assembly Type:</label>
+                        <select id="pcb_assembly_type" name="pcb_assembly_type" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="smt">SMT (Surface Mount Technology)</option>
+                            <option value="tht">THT (Through-Hole Technology)</option>
+                        </select>
+                    </div>
 
-            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                Submit
-            </button>
-        </form>
-    </div>
+                    <div>
+                        <label for="components_provided" class="block text-sm font-medium text-gray-700">Components Provided:</label>
+                        <select id="components_provided" name="components_provided" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
 
-    <!-- PCB Assembly Form -->
-<div id="PCBAssembly" class="tabcontent" style="display: none;">
-    <form class="space-y-4">
-        <div>
-            <label for="assembly-quantity" class="block text-sm font-medium text-gray-700">Quantity:</label>
-            <input type="number" id="assembly-quantity" name="assembly_quantity" placeholder="Enter quantity" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
-        </div>
-
-        <div>
-            <label for="unique-parts" class="block text-sm font-medium text-gray-700">Number of Unique Parts:</label>
-            <input type="number" id="unique-parts" name="unique_parts" placeholder="Enter number of unique parts" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
-        </div>
-
-        <div>
-            <label for="smt-pads" class="block text-sm font-medium text-gray-700">SMT Pads:</label>
-            <input type="number" id="smt-pads" name="smt_pads" placeholder="Enter number of SMT pads" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
-        </div>
-
-        <div>
-            <label for="thru-holes" class="block text-sm font-medium text-gray-700">Thru-Holes:</label>
-            <input type="number" id="thru-holes" name="thru_holes" placeholder="Enter number of thru-holes" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
-        </div>
-
-        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-            Submit
-        </button>
-    </form>
-</div>
-
-</div>
-
-<!-- Products Section -->
-<div class="products mx-auto my-8">
-    <div class="product-scroll-container">
-        <!-- Product Card 1 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 1" class="product-image">
-            <div class="product-info">
-                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
-                <div class="price-stock">
-                    <span class="text-xl font-semibold">$110.00</span>
-                    <span class="text-sm">In stock</span>
-                </div>
-                <button type="button" class="buy-now">Buy now</button>
-            </div>
-        </div>
-        <!-- Product Card 2 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
-            <div class="product-info">
-                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
-                <div class="price-stock">
-                    <span class="text-xl font-semibold">IDR 999.99</span>
-                    <span class="text-sm">In stock</span>
-                </div>
-
-                <button type="button" class="buy-now">Buy now</button>
-            </div>
-        </div>
-        <!-- Additional Product Cards similarly -->
-        <!-- Product Card 3 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
-            <div class="product-info">
-                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
-                <div class="price-stock">
-                    <span class="text-xl font-semibold">IDR 999.99</span>
-                    <span class="text-sm">In stock</span>
-                </div>
-
-                <button type="button" class="buy-now">Buy now</button>
-            </div>
-        </div>
-        <!-- Product Card 4 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
-            <div class="product-info">
-                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
-                <div class="price-stock">
-                    <span class="text-xl font-semibold">IDR 999.99</span>
-                    <span class="text-sm">In stock</span>
-                </div>
-
-                <button type="button" class="buy-now">Buy now</button>
-            </div>
-        </div>
-        <!-- Product Card 5 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
-            <div class="product-info">
-                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
-                <div class="price-stock">
-                    <span class="text-xl font-semibold">IDR 999.99</span>
-                    <span class="text-sm">In stock</span>
-                </div>
-
-                <button type="button" class="buy-now">Buy now</button>
-            </div>
-        </div>
-        <!-- Product Card 7 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/960x720.png?text=Your+Text+Here" alt="Product Image 2" class="product-image">
-            <div class="product-info">
-                <h1 class="text-xl font-semibold">Lorep Ipsum</h1>
-                <div class="price-stock">
-                    <span class="text-xl font-semibold">IDR 999.99</span>
-                    <span class="text-sm">In stock</span>
-                </div>
-
-                <button type="button" class="buy-now">Buy now</button>
+                    <!-- New PCB Components Selection Card for PCB Assembly -->
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <h4 class="text-lg font-semibold text-gray-800">PCB Components Selection (PCB Assembly)</h4>
+                            <div class="space-y-4">
+                                @foreach (['Resistors', 'Capacitors', 'Diodes', 'ICs', 'Connectors'] as $component)
+                                    <div class="flex items-center">
+                                        <label class="block text-sm font-medium text-gray-700 mr-2">{{ $component }} (Through-hole / SMD):</label>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="{{ strtolower($component) }}-include" name="{{ strtolower($component) }}_include" value="include" class="mr-1">
+                                            <label for="{{ strtolower($component) }}-include" class="text-sm font-medium text-gray-700 mr-2">Include</label>
+                                            <input type="radio" id="{{ strtolower($component) }}-exclude" name="{{ strtolower($component) }}_include" value="exclude" class="mr-1">
+                                            <label for="{{ strtolower($component) }}-exclude" class="text-sm font-medium text-gray-700 mr-2">Exclude</label>
+                                        </div>
+                                        <input type="number" id="{{ strtolower($component) }}-quantity" name="{{ strtolower($component) }}_quantity" placeholder="Quantity" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-24 shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md">Submit Order</button>
+                </form>
             </div>
         </div>
     </div>
-</div>
 
+    <!-- Product Section -->
+    <div class="products bg-white shadow-md rounded-lg p-6 mx-auto my-8">
+        <h3 class="text-xl font-semibold text-center mb-4">Products</h3>
+        <div class="product-scroll-container">
+            <!-- Example Product Cards -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150" alt="Product 1">
+                <h4 class="text-lg font-semibold mt-2">Product 1</h4>
+                <p class="text-gray-600">$20.00</p>
+                <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150" alt="Product 2">
+                <h4 class="text-lg font-semibold mt-2">Product 2</h4>
+                <p class="text-gray-600">$30.00</p>
+                <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+    </div>
 
     @include('components.footer')
 
@@ -317,6 +277,5 @@
             evt.currentTarget.className += " active";
         }
     </script>
-    
 </body>
 </html>
