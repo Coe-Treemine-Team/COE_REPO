@@ -239,26 +239,87 @@
         </div>
     </div>
 
-    <!-- Product Section -->
-    <div class="products bg-white shadow-md rounded-lg p-6 mx-auto my-8">
-        <h3 class="text-xl font-semibold text-center mb-4">Products</h3>
-        <div class="product-scroll-container">
-            <!-- Example Product Cards -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Product 1">
-                <h4 class="text-lg font-semibold mt-2">Product 1</h4>
-                <p class="text-gray-600">$20.00</p>
-                <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Product 2">
-                <h4 class="text-lg font-semibold mt-2">Product 2</h4>
-                <p class="text-gray-600">$30.00</p>
-                <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-            </div>
-            <!-- Add more products as needed -->
+<!-- Product Section -->
+<div class="relative bg-slate-50 overflow-hidden dark:bg-slate-800/25 my-8 w-full">
+  <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]" style="background-position: 10px 10px;"></div>
+  <div class="relative rounded-xl overflow-auto">
+    <div class="w-full bg-white shadow-xl min-w-0 dark:bg-slate-800 dark:highlight-white/5">
+      <div class="overflow-x-auto flex">
+        <!-- Example Product Cards -->
+        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
+          <div class="flex flex-col items-center justify-center gap-3">
+            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 1">
+            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 1</strong>
+            <p class="text-gray-600">$20.00</p>
+            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+          </div>
         </div>
+        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
+          <div class="flex flex-col items-center justify-center gap-3">
+            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 2">
+            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 2</strong>
+            <p class="text-gray-600">$30.00</p>
+            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+          </div>
+        </div>
+        <!-- Add more product cards similarly -->
+        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
+          <div class="flex flex-col items-center justify-center gap-3">
+            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 3">
+            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 3</strong>
+            <p class="text-gray-600">$25.00</p>
+            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+          </div>
+        </div>
+        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
+          <div class="flex flex-col items-center justify-center gap-3">
+            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 4">
+            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 4</strong>
+            <p class="text-gray-600">$35.00</p>
+            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+          </div>
+        </div>
+        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
+          <div class="flex flex-col items-center justify-center gap-3">
+            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 5">
+            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 5</strong>
+            <p class="text-gray-600">$40.00</p>
+            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+          </div>
+        </div>
+        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
+          <div class="flex flex-col items-center justify-center gap-3">
+            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 6">
+            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 6</strong>
+            <p class="text-gray-600">$50.00</p>
+            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+          </div>
+        </div>
+        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
+          <div class="flex flex-col items-center justify-center gap-3">
+            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 7">
+            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 7</strong>
+            <p class="text-gray-600">$55.00</p>
+            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+          </div>
+        </div>
+        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
+          <div class="flex flex-col items-center justify-center gap-3">
+            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 8">
+            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 8</strong>
+            <p class="text-gray-600">$60.00</p>
+            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+
+
+
+
 
     @include('components.footer')
 
