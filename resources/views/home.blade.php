@@ -11,7 +11,7 @@
     <title>COE TREEMINE</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        .banner-placeholder, .selling-points, .services-offered, .products {
+        .banner-placeholder, .selling-points, .services-offered {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -58,39 +58,6 @@
         .product-card img {
             border-radius: 8px;
             max-width: 100%;
-        }
-        .product-scroll-container::-webkit-scrollbar {
-            height: 12px;
-        }
-        .product-scroll-container::-webkit-scrollbar-thumb {
-            background-color: #ccc;
-            border-radius: 6px;
-        }
-        .product-scroll-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        .grid-container {
-            display: grid;
-            gap: 24px;
-        }
-        .grid-item {
-            background-color: white;
-            padding: 16px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .tablinks {
-            margin: 8px;
-        }
-        .tabcontent {
-            padding: 16px;
-            margin: 8px 0;
-        }
-        form .space-y-4 > div {
-            margin-bottom: 16px;
-        }
-        form .space-y-4 > div:last-child {
-            margin-bottom: 0;
         }
     </style>
 </head>
@@ -170,7 +137,7 @@
                         </select>
                     </div>
 
-                    <!-- New PCB Components Selection Card for Prototype -->
+                    <!-- PCB Components Selection Card for Prototype -->
                     <div class="grid-container">
                         <div class="grid-item">
                             <h4 class="text-lg font-semibold text-gray-800">PCB Components Selection (Prototype)</h4>
@@ -198,27 +165,29 @@
             <div id="PCBAssembly" class="tabcontent" style="display: none;">
                 <form class="space-y-4">
                     <div>
-                        <label for="pcb_assembly_type" class="block text-sm font-medium text-gray-700">PCB Assembly Type:</label>
-                        <select id="pcb_assembly_type" name="pcb_assembly_type" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                            <option value="smt">SMT (Surface Mount Technology)</option>
-                            <option value="tht">THT (Through-Hole Technology)</option>
+                        <label for="pcb_dimensions_assembly" class="block text-sm font-medium text-gray-700">PCB Dimensions:</label>
+                        <select id="pcb_dimensions_assembly" name="pcb_dimensions_assembly" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="6">6</option>
                         </select>
                     </div>
 
                     <div>
-                        <label for="components_provided" class="block text-sm font-medium text-gray-700">Components Provided:</label>
-                        <select id="components_provided" name="components_provided" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                        <label for="pcb_base_material_assembly" class="block text-sm font-medium text-gray-700">PCB Base Material:</label>
+                        <select id="pcb_base_material_assembly" name="pcb_base_material_assembly" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="FR-4">FR-4 (Standard)</option>
+                            <option value="Aluminum">Aluminum</option>
                         </select>
                     </div>
 
-                    <!-- New PCB Components Selection Card for PCB Assembly -->
+                    <!-- PCB Components Selection Card for Assembly -->
                     <div class="grid-container">
                         <div class="grid-item">
-                            <h4 class="text-lg font-semibold text-gray-800">PCB Components Selection (PCB Assembly)</h4>
+                            <h4 class="text-lg font-semibold text-gray-800">PCB Components Selection (Assembly)</h4>
                             <div class="space-y-4">
-                                @foreach (['Resistors', 'Capacitors', 'Diodes', 'ICs', 'Connectors'] as $component)
+                                @foreach (['Microcontrollers', 'ICs', 'Transistors'] as $component)
                                     <div class="flex items-center">
                                         <label class="block text-sm font-medium text-gray-700 mr-2">{{ $component }} (Through-hole / SMD):</label>
                                         <div class="flex items-center">
@@ -239,87 +208,17 @@
         </div>
     </div>
 
-<!-- Product Section -->
-<div class="relative bg-slate-50 overflow-hidden dark:bg-slate-800/25 my-8 w-full">
-  <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]" style="background-position: 10px 10px;"></div>
-  <div class="relative rounded-xl overflow-auto">
-    <div class="w-full bg-white shadow-xl min-w-0 dark:bg-slate-800 dark:highlight-white/5">
-      <div class="overflow-x-auto flex">
-        <!-- Example Product Cards -->
-        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
-          <div class="flex flex-col items-center justify-center gap-3">
-            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 1">
-            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 1</strong>
-            <p class="text-gray-600">$20.00</p>
-            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-          </div>
-        </div>
-        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
-          <div class="flex flex-col items-center justify-center gap-3">
-            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 2">
-            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 2</strong>
-            <p class="text-gray-600">$30.00</p>
-            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-          </div>
-        </div>
-        <!-- Add more product cards similarly -->
-        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
-          <div class="flex flex-col items-center justify-center gap-3">
-            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 3">
-            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 3</strong>
-            <p class="text-gray-600">$25.00</p>
-            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-          </div>
-        </div>
-        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
-          <div class="flex flex-col items-center justify-center gap-3">
-            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 4">
-            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 4</strong>
-            <p class="text-gray-600">$35.00</p>
-            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-          </div>
-        </div>
-        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
-          <div class="flex flex-col items-center justify-center gap-3">
-            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 5">
-            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 5</strong>
-            <p class="text-gray-600">$40.00</p>
-            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-          </div>
-        </div>
-        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
-          <div class="flex flex-col items-center justify-center gap-3">
-            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 6">
-            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 6</strong>
-            <p class="text-gray-600">$50.00</p>
-            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-          </div>
-        </div>
-        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
-          <div class="flex flex-col items-center justify-center gap-3">
-            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 7">
-            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 7</strong>
-            <p class="text-gray-600">$55.00</p>
-            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-          </div>
-        </div>
-        <div class="flex-none py-6 px-3 first:pl-6 last:pr-6">
-          <div class="flex flex-col items-center justify-center gap-3">
-            <img class="w-48 h-48 rounded-lg" src="https://via.placeholder.com/150" alt="Product 8">
-            <strong class="text-slate-900 text-xs font-medium dark:text-slate-200">Product 8</strong>
-            <p class="text-gray-600">$60.00</p>
-            <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+    <!-- Product Scroll Container -->
+    <div class="product-scroll-container">
+        @for ($i = 0; $i < 10; $i++)
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Product Image">
+                <h3 class="text-lg font-semibold mt-2">Product Title</h3>
+                <p class="text-gray-600">Short description of the product. Price: $100</p>
+                <button class="mt-2 w-full bg-blue-500 text-white py-1 px-2 rounded-md">Add to Cart</button>
+            </div>
+        @endfor
     </div>
-  </div>
-</div>
-
-
-
-
-
 
     @include('components.footer')
 
