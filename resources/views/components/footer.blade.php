@@ -9,40 +9,51 @@
                     </div>
                     <p class="text-sm leading-none text-black mt-4">Copyright © 2024 COE TREE MINE</p>
                     <p class="text-sm leading-none text-black mt-4">All rights reserved</p>
-                    <div class="flex items-center gap-x-4 mt-12">
+<div class="flex items-center gap-x-4 mt-12">
+<a href="https://www.instagram.com" target="_blank" aria-label="instagram">
     <button aria-label="instagram" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
-        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="">
             <!-- SVG content here -->
         </svg>
     </button>
+</a>
+<a href="https://www.linkedin.com" target="_blank" aria-label="Linked In">
     <button aria-label="linked-in" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- SVG content here -->
         </svg>
     </button>
+</a>
+<a  href="https://www.twitter.com" target="_blank" aria-label="Twitter">
     <button aria-label="twitter" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- SVG content here -->
         </svg>
     </button>
+</a>
+<a  href="https://www.youtube.com" target="_blank" aria-label="Youtube">
     <button aria-label="youtube" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- SVG content here -->
         </svg>
     </button>
+</a>
+<a>
     <button aria-label="youtube" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- SVG content here -->
         </svg>
     </button>
+</a>
+<a>
     <button aria-label="youtube" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- SVG content here -->
         </svg>
     </button>
 </div>
-
-                </div>
+</a>
+</div>
                 <div class="sm:ml-0 ml-8 flex flex-col">
                     <h2 class="text-base font-semibold leading-4 text-black"
 >Company</h2>

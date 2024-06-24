@@ -20,13 +20,13 @@
             text-align: center;
         }
         .banner-placeholder {
-            height: 963px;
+            height: 600px; /* Adjust this value to change the height */
             background-color: #D9D9D9;
         }
-        .banner-placeholder img {
+        .banner-placeholder iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border: none;
         }
         .selling-points {
             height: 150px;
@@ -66,7 +66,7 @@
 
     <!-- Banner Placeholder -->
     <div class="banner-placeholder">
-        <img src="https://via.placeholder.com/960x600" alt="Banner Image">
+        <iframe src="https://my.spline.design/interactiveaistartupheropage-ca9618519ff1573c140f232d4b8f67f4/" frameborder="0"></iframe>
     </div>
 
     <!-- Selling Points -->
@@ -208,17 +208,45 @@
         </div>
     </div>
 
+<!-- Product Section -->
+<!-- <div class="product-section text-center">
+    <h2 class="text-2xl font-bold mb-4">Featured Products</h2> -->
+
     <!-- Product Scroll Container -->
-    <div class="product-scroll-container">
+    <!-- <div class="product-scroll-container overflow-x-auto flex flex-nowrap gap-4 py-4">
         @for ($i = 0; $i < 10; $i++)
-            <div class="product-card">
-                <img src="https://via.placeholder.com/200" alt="Product Image">
-                <h3 class="text-lg font-semibold mt-2">Product Title</h3>
-                <p class="text-gray-600">Short description of the product. Price: $100</p>
-                <button class="mt-2 w-full bg-blue-500 text-white py-1 px-2 rounded-md">Add to Cart</button>
+            <div class="product-card bg-white shadow-md rounded-lg p-4 flex-none" style="width: 300px;">
+                <img src="https://via.placeholder.com/200" alt="Product Image" class="w-full rounded-lg">
+                <div class="mt-4">
+                    <h3 class="text-lg font-semibold text-center">Product Title</h3>
+                    <p class="text-gray-600">Short description of the product. Price: $100</p>
+                    <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+                </div>
             </div>
         @endfor
     </div>
+</div> -->
+
+<!-- Product Section -->
+<div class="product-section text-center">
+    <h2 class="text-2xl font-bold mb-4">Featured Products</h2>
+
+    <!-- Product Scroll Container -->
+    <div class="product-scroll-container overflow-x-auto flex flex-nowrap gap-4 py-4" style="scrollbar-width: thin; scrollbar-color: rgba(155, 155, 155, 0.5) rgba(255, 255, 255, 0.5);">
+        @for ($i = 0; $i < 10; $i++)
+            <div class="product-card bg-white shadow-md rounded-lg p-4 flex-none" style="width: 300px;">
+                <img src="https://via.placeholder.com/200" alt="Product Image" class="w-full rounded-lg">
+                <div class="mt-4">
+                    <h3 class="text-lg font-semibold text-center">Product Title</h3>
+                    <p class="text-gray-600">Short description of the product. Price: $100</p>
+                    <button class="mt-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md">Add to Cart</button>
+                </div>
+            </div>
+        @endfor
+    </div>
+</div>
+
+
 
     @include('components.footer')
 
@@ -236,6 +264,9 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
         }
+    </script>
+    <script>
+
     </script>
 </body>
 </html>
