@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\frontendcontroller;
 use App\Http\Controllers\backendcontroller;
+use App\Http\Controllers\cartcontroller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -41,6 +42,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+// Bagian dimana untuk frontend
+route::get('/products',[frontendcontroller::class, 'view_products_front']);
+// add cart (testing)
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart', [CartController::class, 'add'])->name('cart.add');
+Route::patch('/cart/{product}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/{product}', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 
 
 Route::middleware('auth')->group(function () {
