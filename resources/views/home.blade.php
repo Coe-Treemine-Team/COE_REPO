@@ -22,6 +22,7 @@
         .banner-placeholder {
             height: 600px; /* Adjust this value to change the height */
             background-color: #D9D9D9;
+            margin-bottom: 0;
         }
         .banner-placeholder iframe {
             width: 100%;
@@ -31,7 +32,7 @@
         .selling-points {
             height: 150px;
             background-color: #EFEFEF;
-            margin: 32px 0;
+            /* Remove margin to eliminate space between banner and selling points */
         }
         .services-offered {
             background-color: #F5F5F5;
@@ -106,107 +107,157 @@
         </div>
     </div>
 
-    <!-- Services Offered -->
-    <div class="services-offered">
-        <!-- PCB Order Customization Section -->
-        <div class="service-card bg-white shadow-md rounded-lg p-6 mx-auto my-8">
-            <h3 class="text-xl font-semibold text-center mb-4">PCB Order Customization</h3>
-            <div class="tabs mb-4 flex justify-center">
-                <button class="tablinks active px-4 py-2 bg-blue-500 text-black rounded-lg mr-2" onclick="openTab(event, 'Prototype')">Prototype</button>
-                <button class="tablinks px-4 py-2 bg-blue-500 text-black rounded-lg" onclick="openTab(event, 'PCBAssembly')">PCB Assembly</button>
-            </div>
+<!-- Services Offered -->
+<div class="services-offered">
+    <!-- PCB Order Customization Section -->
+    <div class="service-card bg-white shadow-md rounded-md p-6 mx-auto my-8">
+        <h3 class="text-xl font-semibold text-center mb-4">PCB Order Customization</h3>
+        <div class="tabs mb-4 flex justify-center">
+            <button class="tablinks active px-4 py-2 bg-blue-500 text-black rounded-md mr-2" onclick="openTab(event, 'Prototype')">Prototype</button>
+            <button class="tablinks px-4 py-2 bg-blue-500 text-black rounded-md" onclick="openTab(event, 'PCBAssembly')">PCB Assembly</button>
+        </div>
 
-            <!-- Prototype Form -->
-            <div id="Prototype" class="tabcontent" style="display: block;">
-                <form class="space-y-4">
-                    <div>
-                        <label for="dimensions" class="block text-sm font-medium text-gray-700">PCB Dimensions:</label>
-                        <select id="dimensions" name="dimensions" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                        </select>
-                    </div>
+        <!-- Prototype Form -->
+        <div id="Prototype" class="tabcontent rounded-md" style="display: block;">
+            <form class="space-y-4" action="{{ route('detailed.order') }}" method="POST">
+                @csrf
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="rounded-md bg-gray-100 p-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="dimensions" class="block text-sm font-medium text-gray-700">PCB Dimensions:</label>
+                                <select id="dimensions" name="dimensions" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="4">4</option>
+                                    <option value="6">6</option>
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <small class="text-gray-500">Select the dimensions of the PCB in inches.</small>
+                            </div>
 
-                    <div>
-                        <label for="base_material" class="block text-sm font-medium text-gray-700">PCB Base Material:</label>
-                        <select id="base_material" name="base_material" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                            <option value="FR-4">FR-4 (Standard)</option>
-                            <option value="Aluminum">Aluminum</option>
-                        </select>
+                            <div>
+                                <label for="base_material" class="block text-sm font-medium text-gray-700">PCB Base Material:</label>
+                                <select id="base_material" name="base_material" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    <option value="FR-4">FR-4 (Standard)</option>
+                                    <option value="Aluminum">Aluminum</option>
+                                    <option value="Polyimide">Polyimide</option>
+                                    <option value="Rogers">Rogers</option>
+                                </select>
+                                <small class="text-gray-500">Choose the base material for the PCB.</small>
+                            </div>
+
+                            <div>
+                                <label for="layer_count" class="block text-sm font-medium text-gray-700">Layer Count:</label>
+                                <select id="layer_count" name="layer_count" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="4">4</option>
+                                    <option value="6">6</option>
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <small class="text-gray-500">Select the number of layers for the PCB.</small>
+                            </div>
+
+                            <div>
+                                <label for="finish_type" class="block text-sm font-medium text-gray-700">Finish Type:</label>
+                                <select id="finish_type" name="finish_type" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    <option value="HASL">HASL</option>
+                                    <option value="ENIG">ENIG</option>
+                                    <option value="Immersion Silver">Immersion Silver</option>
+                                    <option value="OSP">OSP</option>
+                                </select>
+                                <small class="text-gray-500">Choose the finish type for the PCB.</small>
+                            </div>
+
+                            <div>
+                                <label for="solder_mask_color" class="block text-sm font-medium text-gray-700">Solder Mask Color:</label>
+                                <select id="solder_mask_color" name="solder_mask_color" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    <option value="Green">Green</option>
+                                    <option value="Red">Red</option>
+                                    <option value="Blue">Blue</option>
+                                    <option value="Black">Black</option>
+                                    <option value="White">White</option>
+                                </select>
+                                <small class="text-gray-500">Select the color of the solder mask.</small>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- PCB Components Selection Card for Prototype -->
-                    <div class="grid-container">
-                        <div class="grid-item">
-                            <h4 class="text-lg font-semibold text-gray-800">PCB Components Selection (Prototype)</h4>
-                            <div class="space-y-4">
-                                @foreach (['Resistors', 'Capacitors', 'Diodes'] as $component)
+                    <div class="rounded-md bg-gray-100 p-4">
+                        <h4 class="text-lg font-semibold text-gray-800">PCB Components Selection (Prototype)</h4>
+                        <div class="space-y-4">
+                            @foreach (['Resistors', 'Capacitors', 'Diodes', 'Inductors', 'Transistors'] as $component)
+                                <div class="flex items-center">
+                                    <label class="block text-sm font-medium text-gray-700 mr-2">{{ $component }} (Through-hole / SMD):</label>
                                     <div class="flex items-center">
-                                        <label class="block text-sm font-medium text-gray-700 mr-2">{{ $component }} (Through-hole / SMD):</label>
-                                        <div class="flex items-center">
-                                            <input type="radio" id="{{ strtolower($component) }}-include" name="{{ strtolower($component) }}_include" value="include" class="mr-1">
-                                            <label for="{{ strtolower($component) }}-include" class="text-sm font-medium text-gray-700 mr-2">Include</label>
-                                            <input type="radio" id="{{ strtolower($component) }}-exclude" name="{{ strtolower($component) }}_include" value="exclude" class="mr-1">
-                                            <label for="{{ strtolower($component) }}-exclude" class="text-sm font-medium text-gray-700 mr-2">Exclude</label>
-                                        </div>
-                                        <input type="number" id="{{ strtolower($component) }}-quantity" name="{{ strtolower($component) }}_quantity" placeholder="Quantity" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-24 shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        <input type="radio" id="{{ strtolower($component) }}-include" name="{{ strtolower($component) }}_include" value="include" class="mr-1">
+                                        <label for="{{ strtolower($component) }}-include" class="text-sm font-medium text-gray-700 mr-2">Include</label>
+                                        <input type="radio" id="{{ strtolower($component) }}-exclude" name="{{ strtolower($component) }}_include" value="exclude" class="mr-1">
+                                        <label for="{{ strtolower($component) }}-exclude" class="text-sm font-medium text-gray-700 mr-2">Exclude</label>
                                     </div>
-                                @endforeach
-                            </div>
+                                    <input type="number" id="{{ strtolower($component) }}-quantity" name="{{ strtolower($component) }}_quantity" placeholder="Quantity" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-24 shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                    <small class="text-gray-500 ml-2">Enter quantity if included.</small>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-                    <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md">Submit Order</button>
-                </form>
-            </div>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md">Submit Order</button>
+            </form>
+        </div>
 
-            <!-- PCB Assembly Form -->
-            <div id="PCBAssembly" class="tabcontent" style="display: none;">
-                <form class="space-y-4">
-                    <div>
-                        <label for="pcb_dimensions_assembly" class="block text-sm font-medium text-gray-700">PCB Dimensions:</label>
-                        <select id="pcb_dimensions_assembly" name="pcb_dimensions_assembly" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="pcb_base_material_assembly" class="block text-sm font-medium text-gray-700">PCB Base Material:</label>
-                        <select id="pcb_base_material_assembly" name="pcb_base_material_assembly" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                            <option value="FR-4">FR-4 (Standard)</option>
-                            <option value="Aluminum">Aluminum</option>
-                        </select>
-                    </div>
-
-                    <!-- PCB Components Selection Card for Assembly -->
-                    <div class="grid-container">
-                        <div class="grid-item">
-                            <h4 class="text-lg font-semibold text-gray-800">PCB Components Selection (Assembly)</h4>
-                            <div class="space-y-4">
-                                @foreach (['Microcontrollers', 'ICs', 'Transistors'] as $component)
-                                    <div class="flex items-center">
-                                        <label class="block text-sm font-medium text-gray-700 mr-2">{{ $component }} (Through-hole / SMD):</label>
-                                        <div class="flex items-center">
-                                            <input type="radio" id="{{ strtolower($component) }}-include" name="{{ strtolower($component) }}_include" value="include" class="mr-1">
-                                            <label for="{{ strtolower($component) }}-include" class="text-sm font-medium text-gray-700 mr-2">Include</label>
-                                            <input type="radio" id="{{ strtolower($component) }}-exclude" name="{{ strtolower($component) }}_include" value="exclude" class="mr-1">
-                                            <label for="{{ strtolower($component) }}-exclude" class="text-sm font-medium text-gray-700 mr-2">Exclude</label>
-                                        </div>
-                                        <input type="number" id="{{ strtolower($component) }}-quantity" name="{{ strtolower($component) }}_quantity" placeholder="Quantity" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-24 shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md">Submit Order</button>
-                </form>
-            </div>
+        <!-- PCB Assembly Form -->
+        <div id="PCBAssembly" class="tabcontent rounded-md" style="display: none;">
+            <form class="space-y-4" action="{{ route('detailed.order') }}" method="POST">
+                @csrf
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- PCB Assembly Form Fields Similar to Prototype -->
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md">Submit Order</button>
+            </form>
         </div>
     </div>
+</div>
+
+<!-- JavaScript for Tabs -->
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+
+
+<!-- JavaScript for Tab Functionality -->
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
 
 <!-- Product Section -->
 <!-- <div class="product-section text-center">

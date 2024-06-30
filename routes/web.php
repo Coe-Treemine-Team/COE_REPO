@@ -104,3 +104,18 @@ Route::prefix('api/v1')->group(function () {
     Route::put('/products/{id}', [ProductController::class, 'update']); // Update a product
     Route::delete('/products/{id}', [ProductController::class, 'destroy']); // Delete a product
 });
+
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\HomeController;
+
+// Home page route
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Detailed order route
+Route::post('/detailed-order', [OrderController::class, 'detailedOrder'])->name('detailed.order');
+
+use App\Http\Controllers\CustomOrderController;
+
+Route::post('/custom-orders', [CustomOrderController::class, 'store'])->name('custom-orders.store');
+
+
