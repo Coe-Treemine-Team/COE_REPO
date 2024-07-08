@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\frontendcontroller;
 use App\Http\Controllers\backendcontroller;
 use App\Http\Controllers\cartcontroller;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 // Public routes
@@ -47,18 +48,18 @@ Route::get('/dashboard', function () {
 
 // Bagian dimana untuk frontend
 route::get('/products',[frontendcontroller::class, 'view_products_front']);
-// add cart (testing)
-Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-Route::post('/cart', [CartController::class, 'add'])->name('cart.add');
-Route::patch('/cart/{product}', [CartController::class, 'update'])->name('cart.update');
-Route::delete('/cart/{product}', [CartController::class, 'remove'])->name('cart.remove');
-Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+
 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart', [CartController::class, 'add'])->name('cart.add');
+    Route::patch('/cart/{product}', [CartController::class, 'update'])->name('cart.update');
+    Route::delete('/cart/{product}', [CartController::class, 'remove'])->name('cart.remove');
+    Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 });
 
 // Authentication routes
@@ -104,3 +105,18 @@ Route::prefix('api/v1')->group(function () {
     Route::put('/products/{id}', [ProductController::class, 'update']); // Update a product
     Route::delete('/products/{id}', [ProductController::class, 'destroy']); // Delete a product
 });
+
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\HomeController;
+
+// Home page route
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Detailed order route
+Route::post('/detailed-order', [OrderController::class, 'detailedOrder'])->name('detailed.order');
+
+use App\Http\Controllers\CustomOrderController;
+
+Route::post('/custom-orders', [CustomOrderController::class, 'store'])->name('custom-orders.store');
+
+

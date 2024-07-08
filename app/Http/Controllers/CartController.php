@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\products;
+use App\Models\Products;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class CartController extends Controller
 {
@@ -16,10 +19,10 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
-        $product = products::find($request->product_id);
+        $product = Products::find($request->product_id);
         $cart = Session::get('cart', []);
         $cart[$product->id] = [
-            "name" => $product->product_name,
+            "product_name" => $product->product_name,
             "quantity" => 1,
             "price" => $product->price,
             "photo" => $product->images
@@ -49,10 +52,24 @@ class CartController extends Controller
 
     public function checkout(Request $request)
     {
-        // Implement payment logic here
+        // Save the address in the user's profile
+        $user = Auth::user();
+       
+
+        // Create a new transaction
+        $transaction = new Transaction();
+        $transaction->id = $request->id;
+        $transaction->user_id = $user->id;
+        $transaction->address = $request->address;
+        $transaction->payment_proof = $request-> payment;
+        $transaction->total_amount = array_reduce(Session::get('cart'), function ($total, $details) {
+            return $total + ($details['price'] * $details['quantity']);
+        }, 0);
+        $transaction->save();
+
+        // Clear the cart
         Session::forget('cart');
-        return redirect()->route('cart.index')->with('success', 'Payment Successful!');
+
+        return redirect()->route('cart.index')->with('status', 'Checkout successful. Your transaction has been recorded.');
     }
 }
-
-

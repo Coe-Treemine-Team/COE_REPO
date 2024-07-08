@@ -28,7 +28,7 @@
                     @foreach(Session::get('cart') as $id => $details)
                         @php $total += $details['price'] * $details['quantity']; @endphp
                         <tr>
-                            <td class="border-b p-2">{{ $details['name'] }}</td>
+                            <td class="border-b p-2">{{ $details['product_name'] }}</td>
                             <td class="border-b p-2">
                                 <form action="{{ route('cart.update', $id) }}" method="POST">
                                     @csrf
@@ -54,8 +54,17 @@
                     </tr>
                 </tbody>
             </table>
-            <form action="{{ route('cart.checkout') }}" method="POST" class="mt-4">
+
+            <form action="{{ route('cart.checkout') }}" method="POST" class="mt-4" enctype="multipart/form-data">
                 @csrf
+                <div class="mb-4">
+                    <label for="address" class="block text-gray-700">Address:</label>
+                    <textarea id="address" name="address" class="mt-1 block w-full resize-none" style="width: 100%; height: 100px;" required>{{ Auth::user()->address }}</textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="payment" class="block text-gray-700">Upload Payment Proof:</label>
+                    <input type="file" id="payment" name="payment" class="mt-1 block w-full" accept="image/*" required>
+                </div>
                 <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md">Checkout</button>
             </form>
         @else
